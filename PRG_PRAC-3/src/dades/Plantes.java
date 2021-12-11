@@ -1,3 +1,6 @@
+/**
+ * Autor: Jialiang Chen, Jose Luis Pueyo
+*/
 package dades;
 
 public abstract class Plantes {

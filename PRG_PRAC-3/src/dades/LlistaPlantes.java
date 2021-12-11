@@ -1,8 +1,14 @@
+/**
+ * Autor: Jialiang Chen, Jose Luis Pueyo
+*/
 package dades;
+
+import java.util.Arrays;
 
 public class LlistaPlantes{
 	private int nElem;
     private Plantes llistaPlantes[];
+    
     public LlistaPlantes (int mida) {
         this.nElem=0;
         llistaPlantes= new Plantes[mida];
@@ -15,6 +21,10 @@ public class LlistaPlantes{
     	}
     	return false;
     }
-    public boolean elimina
-    
+
+	@Override
+	public String toString() {
+		return "LlistaPlantes [nElem=" + nElem + ", llistaPlantes=" + Arrays.toString(llistaPlantes) + "]";
+	}
+	
 }
