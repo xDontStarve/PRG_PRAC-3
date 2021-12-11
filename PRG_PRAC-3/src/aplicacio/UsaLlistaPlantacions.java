@@ -4,7 +4,7 @@ package aplicacio;
 import dades.*;
 
 public class UsaLlistaPlantacions {
-	
+	/*
 	public static void main(String[] args) {
 		String [] terreny = new String[3];
 		terreny[0] = "CalcariSolana";
@@ -18,5 +18,5 @@ public class UsaLlistaPlantacions {
 		LlistaPlantacions llista = new LlistaPlantacions(5);		
 		llista.afegir(new Plantacions ("Marc", 2021, llistaRodals));
 		System.out.println(llista.toString());
-	}	
+	}	*/
 }

@@ -12,13 +12,13 @@ import dades.Terrenys;
 
 public class UsaLlistaTerrenys {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		LlistaTerrenys llista = new LlistaTerrenys(2);
 		comprobaLlistaTerrenys(llista);
 
 	}
 
-	
+	*/
 	public static void comprobaLlistaTerrenys(LlistaTerrenys llista) {
 		String nomTerreny1 = "CalcariSolana";
 		String[] nomPlantes1 = {"Pinus sylvestris", "Pinus nigra", "Fraxinus excelsior", "Acer pseudoplatanus", "Populus nigra"};

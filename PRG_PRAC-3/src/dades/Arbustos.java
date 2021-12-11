@@ -1,6 +1,7 @@
 /**
- * Autor: Jialiang Chen, Jose Luis Pueyo
-*/
+ * @author Jialiang Chen
+ * @author Jose Luis Pueyo
+ */
 package dades;
 
 public class Arbustos extends Plantes{
