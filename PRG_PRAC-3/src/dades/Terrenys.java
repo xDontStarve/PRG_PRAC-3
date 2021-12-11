@@ -61,7 +61,7 @@ public class Terrenys {
 	
 	@Override
 	public String toString() {
-		return "nomTerreny = " + nomTerreny + ", plantes = " + Arrays.toString(plantes) + ", numPlantes = "
+		return "nomTerreny = " + nomTerreny + ", plantes = " + Arrays.toString(plantes) + "\n\t\t\t\tnumPlantes = "
 				+ Arrays.toString(numPlantes);
 	}
 	
