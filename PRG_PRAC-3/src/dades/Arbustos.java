@@ -5,19 +5,25 @@
 package dades;
 
 public class Arbustos extends Planta{
-	private int absorcio, edatMaxima;
-	public Arbustos(String nomCientific, int absorcio, int edatMaxima) {
+	private int absorcio, edatMaxima, edatActual;
+	public Arbustos(String nomCientific, int absorcio, int edatActual, int edatMaxima) {
 		super(nomCientific, Planta.ARBUSTICA);
 		this.absorcio=absorcio;
 		this.edatMaxima=edatMaxima;
+		this.edatActual=edatActual;
 	}
 	
 	public int getAbsorcio() {
-		return this.absorcio;
+		if (edatActual>5 && edatActual<edatMaxima) return absorcio;
+		return -1;			//-1: casos en els que no arriba a 5 anys o superen l'edat màxima (TAD??)
 	}
 
 	public int getEdatMaxima() {
 		return edatMaxima;
+	}
+	
+	public int getEdatActual() {
+		return edatActual;
 	}
 
 	public void setEdatMaxima(int edatMaxima) {
