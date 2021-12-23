@@ -6,12 +6,12 @@ package dades;
 
 import java.util.Arrays;
 
-public class Arbres extends Plantes{
+public class Arbres extends Planta{
 	// TODO Canvi en el tipus de emmagatzematge de absorcio i rangEdats de forma que estiguin relacionades
 	private int[] absorcio, rangEdats;
 
 	public Arbres(String nomCientific, int absorcio[], int rangEdats[]) {
-		super(nomCientific, Plantes.ARBOREA);
+		super(nomCientific, Planta.ARBOREA);
 		this.absorcio=absorcio;
 		this.rangEdats=rangEdats;
 	}

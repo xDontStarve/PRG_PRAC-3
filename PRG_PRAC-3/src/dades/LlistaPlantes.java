@@ -7,23 +7,40 @@ package dades;
  */
 public class LlistaPlantes implements TADLlistaPlantes{
 	private int nElem;
-    private Plantes llistaPlantes[];
+    private Planta llistaPlantes[];
     
     public LlistaPlantes (int mida) {
         this.nElem=0;
-        llistaPlantes= new Plantes[mida];
+        llistaPlantes= new Planta[mida];
     }
     
-    public boolean afegirPlanta(Plantes planta) {
-    	if (nElem<llistaPlantes.length) {
-    		llistaPlantes[nElem++]= planta;
-    		return true;
+    public boolean afegirPlanta(Planta planta) {
+    	if (!ple() && !buit() && !pertany(planta)) {
+    		int pos=nElem;
+			for (int i=0; i<nElem;i++) {
+    			if (llistaPlantes[i].compareTo(planta)==1){
+    				pos = i;
+    			}
+			}
+			return afegir(planta, pos);
     	}
     	return false;
     }
 	
+	public boolean afegir(Planta planta, int pos){
+		if (!ple() && (pos < nElem+1 || pos > 0)){
+			for (int i = ++nElem; i > pos; i--){
+				llistaPlantes[i] = llistaPlantes[i-1];
+			}
+			llistaPlantes[pos]=planta;
+
+			return true;
+		}
+		return false;
+	}
+
 	@Override
-	public boolean eliminarPlanta(Plantes planta) {
+	public boolean eliminarPlanta(Planta planta) {
 		return eliminar(getPosicio(planta));
 	}
 
@@ -43,19 +60,14 @@ public class LlistaPlantes implements TADLlistaPlantes{
 	}
 
 	@Override
-	public boolean pertany(Plantes planta) {
-		for (Plantes plantaLlista : llistaPlantes){
-			if (plantaLlista.equals(planta)) {
-				return true;
-			}
-		}
-		return false;
+	public boolean pertany(Planta planta) {
+		return getPosicio(planta) == -1;
 	}
 
 	@Override
-	public int getPosicio(Plantes planta) {
+	public int getPosicio(Planta planta) {
 		int pos = -1;
-		for(int i = 0; i<llistaPlantes.length; i++){
+		for(int i = 0; i < nElem; i++){
 			if (llistaPlantes[i].equals(planta)){	
 				pos = i;
 				break;
@@ -65,10 +77,10 @@ public class LlistaPlantes implements TADLlistaPlantes{
 	}
 
 	@Override
-	public Plantes getPlanta(String nomCientific){
-		for (Plantes planta : llistaPlantes){
-			if (planta.getNomCientific().equals(nomCientific)){
-				return planta;
+	public Planta getPlanta(String nomCientific){
+		for (int i = 0; i < nElem; i++){
+			if (llistaPlantes[i].getNomCientific().equals(nomCientific)){
+				return llistaPlantes[i];
 			}
 		}
 		return null;
@@ -78,8 +90,18 @@ public class LlistaPlantes implements TADLlistaPlantes{
 	public String toString(){
 		String buffer = "Llista Plantes: \n";
 		for (int i = 0; i < nElem; i++){
-			buffer += i + "\t" + llistaPlantes[i].toString() + "\n";
+			buffer.concat(i + "\t" + llistaPlantes[i].toString() + "\n");
 		}
 		return buffer;
+	}
+
+	@Override
+	public boolean ple() {
+		return nElem == llistaPlantes.length;
+	}
+	
+	@Override
+	public boolean buit() {
+		return nElem==0;
 	}
 }

@@ -4,10 +4,10 @@
  */
 package dades;
 
-public class Arbustos extends Plantes{
+public class Arbustos extends Planta{
 	private int absorcio, edatMaxima;
 	public Arbustos(String nomCientific, int absorcio, int edatMaxima) {
-		super(nomCientific, Plantes.ARBUSTICA);
+		super(nomCientific, Planta.ARBUSTICA);
 		this.absorcio=absorcio;
 		this.edatMaxima=edatMaxima;
 	}
