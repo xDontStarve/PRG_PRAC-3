@@ -8,8 +8,11 @@
 package dades;
 
 import java.util.Arrays;
+import java.io.Serializable;
 
-public class Terrenys {
+public class Terrenys implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private String nomTerreny;
 	private String[] plantes;
 	private int[] numPlantes;

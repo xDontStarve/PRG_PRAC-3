@@ -7,7 +7,9 @@
  */
 package dades;
 
+
 public class LlistaTerrenys {
+	
 	private Terrenys[] llista;
 	private int numElem;
 	
@@ -21,6 +23,10 @@ public class LlistaTerrenys {
 			llista[numElem] = terreny;
 			numElem++;
 		}
+	}
+	
+	public Terrenys getPos (int i) {
+		return llista[i];
 	}
 	public String toString() {
 		String aux;
