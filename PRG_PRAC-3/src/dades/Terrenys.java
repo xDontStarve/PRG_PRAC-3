@@ -23,7 +23,7 @@ public class Terrenys implements Serializable{
 		this.numPlantes = new int[numPlantes.length];
 		
 		for(int i=0; i<plantes.length; i++) {
-			this.plantes[i] = plantes[i];
+			this.plantes[0] = plantes[i];
 		}
 		for(int i=0; i<numPlantes.length; i++) {
 			this.numPlantes[i] = numPlantes[i];
